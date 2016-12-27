@@ -1,7 +1,7 @@
 angular.module('angular.atmosphere', [])
   .service('atmosphereService', function($rootScope){
     var responseParameterDelegateFunctions = ['onOpen', 'onClientTimeout', 'onReopen', 'onMessage', 'onClose', 'onError'];
-    var delegateFunctions = responseParameterDelegateFunctions;
+    var delegateFunctions = JSON.parse(JSON.stringify(responseParameterDelegateFunctions));
     delegateFunctions.push('onTransportFailure');
     delegateFunctions.push('onReconnect');
 
